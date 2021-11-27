@@ -1,7 +1,6 @@
 from datetime import date
 
 class Producto():
-    
     __nombre: str
     __fechaVencimiento: date
     __nroLote: int
