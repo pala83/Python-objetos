@@ -10,11 +10,11 @@ class Producto():
     __fechaEnvasado: date
     __granjaOrigen: str
 
-    def __init__(self, nombre:str, fV: date, nL: int, fE:date, gO:str):        # Constructor
+    def __init__(self, nombre:str, fv:date,  nL: int, fe:date, gO:str):        # Constructor
         self.__nombre = nombre
-        self.__fechaVencimiento = fV
+        self.__fechaVencimiento = fv
         self.__nroLote = nL
-        self.__fechaEnvasado = fE
+        self.__fechaEnvasado = fe
         self.__granjaOrigen = gO
 
     # Getters    
@@ -50,10 +50,10 @@ class Producto():
         self.__granjaOrigen = nuevoGO
     
 
-    def getEtiqueta(self) -> str:    
-        cadena = "| \t Producto: " + self.get_nombre + "\n"
-        cadena += "| \t Fecha de vencimiento: " + str(self.getFechaVencimiento) + "\n"
-        cadena += "| \t Numero de lote: " + str(self.getNumeroLote) + "\n"
-        cadena += "| \t Fecha de envasado: " + str(self.getFechaEnvasado) + "\n"
-        cadena += "| \t Granja de origen: " + self.getGranjaOrigen + "\n"
+    def getEtiqueta(self) -> str:
+        cadena = "| \t Producto: " + self.get_nombre() + "\n"
+        cadena += "| \t FechaVencimiento: " + str(self.__fechaVencimiento) + "\n"
+        cadena += "| \t Numero de lote: " + str(self.getNumeroLote()) + "\n"
+        cadena += "| \t FechaEnvasado: " + str(self.getFechaEnvasado()) + "\n"
+        cadena += "| \t Granja de origen: " + self.getGranjaOrigen() + "\n"
         return cadena
