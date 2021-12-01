@@ -11,7 +11,6 @@ public class ComidaCompleja extends Comida{
         super(nombre, tipo, modoPreparacion);
         this.comidas = new ArrayList<>();
     }
-
     public void addComida(Comida c){
         this.comidas.add(c);
     }

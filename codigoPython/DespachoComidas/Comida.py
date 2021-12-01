@@ -1,59 +1,50 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Comida(ABC):
-    __nombre: str
-    __tipo: str
-    __modoPreparacion: str
-    __aceptar: bool
 
+    def __init__(self, nombre, tipo, modoPreparacion, aceptar):       # constructor
+        self.__nombre = nombre
+        self.__tipo = tipo
+        self.__modoPreparacion = modoPreparacion
+        self.__aceptar = aceptar
+        super().__init__()
 
-def __init__(self, nombre, tipo, modoPreparacion, aceptar):       # constructor
-    self.__nombre = nombre
-    self.__tipo = tipo
-    self.modoPreparacion = modoPreparacion
-    self.__aceptar = aceptar
+    def __str__(self):
+        return "| \t nobre: " + self.get_nombre()
 
+    def aceptar_comida(self):
+        self.__aceptar = True
 
-def aceptar_comida(self):
-    self.__aceptar = True
+    def se_acepto(self):
+        return self.__aceptar
 
+    def get_nombre(self):
+        return self.__nombre
 
-def se_acepto(self):
-    return self.__aceptar
+    def set_nombre(self, nombre):
+        self.__nombre = nombre
 
+    def get_tipo(self):
+        return self.__tipo
 
-def get_nombre(self):
-    return self.__nombre
+    def set_tipo(self, tipo):
+        self.__tipo = tipo
 
+    def get_modopreparacion(self):
+        return self.__modoPreparacion
 
-def set_nombre(self, nombre):
-    self.__nombre = nombre
+    def set_modopreparacion(self, preparacion):
+        self.__modoPreparacion = preparacion
 
+    @abstractmethod
+    def get_precio(self):
+        pass
 
-def get_tipo(self):
-    return self.__tipo
+    @abstractmethod
+    def get_calorias(self):
+        pass
 
-
-def set_tipo(self, tipo):
-    self.__tipo = tipo
-
-
-def get_modopreparacion(self):
-    return self.__modoPreparacion
-
-
-def set_modopreparacion(self, preparacion):
-    self.__modoPreparacion = preparacion
-
-
-def get_precio():
-    pass
-
-
-def get_calorias():
-    pass
-
-
-def get_preparacion():
-    pass
+    @abstractmethod
+    def get_preparacion(self):
+        pass

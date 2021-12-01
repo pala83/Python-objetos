@@ -7,8 +7,7 @@ public class ComidaSimple extends Comida {
     private int precio;
     private Time tPreparacion;
 
-    public ComidaSimple(String nombre, String tipo, String modoPreparacion, int calorias,
-                        int precio, Time tPreparacion){
+    public ComidaSimple(String nombre, String tipo, String modoPreparacion, int calorias, int precio, Time tPreparacion){
         super(nombre, tipo, modoPreparacion);
         this.calorias = calorias;
         this.precio = precio;
