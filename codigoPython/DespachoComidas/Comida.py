@@ -11,7 +11,11 @@ class Comida(ABC):
         super().__init__()
 
     def __str__(self):
-        return "| \t nombre: " + self.get_nombre()
+        cadena = "Nombre : " + self.get_nombre() + "\n"
+        cadena += "|\tTipo: " + self.get_tipo() + "\n"
+        cadena += "|\tModo de preparacion: " + self.get_modopreparacion() + "\n"
+        cadena += "|\tEs aceptada: " + str(self.__aceptar) + "\n-------------------------------"
+        return cadena
 
     def aceptar_comida(self):
         self.__aceptar = True
