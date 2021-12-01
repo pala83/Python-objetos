@@ -11,7 +11,7 @@ class Comida(ABC):
         super().__init__()
 
     def __str__(self):
-        return "| \t nobre: " + self.get_nombre()
+        return "| \t nombre: " + self.get_nombre()
 
     def aceptar_comida(self):
         self.__aceptar = True

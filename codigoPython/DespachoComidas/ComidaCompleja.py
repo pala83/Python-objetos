@@ -15,13 +15,27 @@ class ComidaCompleja(Comida):
         return self.__comidas.copy()
 
     def get_precio(self):
-        return "dsfsd"
+        retorno = 0
+        for i in self.__comidas:
+            retorno += i.get_precio()
+        return retorno
 
     def get_calorias(self):
-        return "dfsd"
+        retorno = 0
+        for i in self.__comidas:
+            retorno += i.get_calorias()
+        return retorno
 
     def get_preparacion(self):
         return "dfsdf"
+
+
+
+
+
+
+
+
 
 nuevo = ComidaCompleja("alfajor", "chocolate", "industrial", True)
 otro = ComidaCompleja("otro alfajor", "chocolate", "industrial", True)
@@ -32,4 +46,5 @@ elemento1 = nuevo.get_lista_comidas()[1]
 print(elemento.get_nombre())
 print(elemento1.get_nombre())
 print(nuevo)
-print(nuevo.get_lista_comidas())
+for a in nuevo.get_lista_comidas():
+    print(a.get_nombre())
