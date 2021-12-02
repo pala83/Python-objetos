@@ -9,12 +9,6 @@ class ComidaCompleja(Comida):
         super().__init__(nombre, tipo, modoPrepcion, aceptar)
         self.__comidas = []
 
-    def __str__(self):
-        cadena = super().__str__() + "\n"
-        for i in self.__comidas:
-            cadena += ""# i.__str__() + "\n"
-        return cadena
-
     def agregar_comida(self, nuevaComida):
         self.__comidas.append(nuevaComida)
 
@@ -36,14 +30,20 @@ class ComidaCompleja(Comida):
     def get_preparacion(self):
         return "dfsdf"
 
+    def __str__(self):
+        cadena = super().__str__() + "\n"
+        for i in self.__comidas:
+            cadena += i.__str__()
+        return cadena
+
 nuevo = ComidaCompleja("alfajor", "chocolate", "industrial", True)
 otro = ComidaCompleja("otro alfajor", "chocolate", "industrial", True)
-nuevo.agregar_comida(nuevo)
+nuevo.agregar_comida(otro)
 nuevo.agregar_comida(otro)
 elemento = nuevo.get_lista_comidas()[0]
 elemento1 = nuevo.get_lista_comidas()[1]
-print(elemento.get_nombre())
-print(elemento1.get_nombre())
+#print(elemento.get_nombre())
+#print(elemento1.get_nombre())
 print(nuevo)
 for a in nuevo.get_lista_comidas():
     print(a.get_nombre())
@@ -56,5 +56,5 @@ cc.agregar_comida(cs2)
 #cadena = cc.get_nombre() + " tipo: " + cc.get_tipo() + "\n"
 #cadena += "precio: " + str(cc.get_precio()) + " calorias: " + str(cc.get_calorias()) + "\n"
 #print(cadena)
-print(cc)
+#print(cc)
 #print(cs1)
