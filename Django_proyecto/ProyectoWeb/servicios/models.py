@@ -6,7 +6,7 @@ from django.db.models.fields import DateTimeField
 class Servicio(models.Model):
     titulo = models.CharField(max_length=50)    # texto
     contenido = models.CharField(max_length=50) # texto
-    imagen = models.ImageField()                # imagen
+    imagen = models.ImageField(upload_to='servicios') # imagen
     created = DateTimeField(auto_now_add=True)  # fecha
     updated = DateTimeField(auto_now_add=True)  # fecha
 
@@ -16,3 +16,4 @@ class Servicio(models.Model):
     
     def __str__(self):
         return self.titulo
+        
